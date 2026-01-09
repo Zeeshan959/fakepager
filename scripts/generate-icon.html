@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pagerlo Icon Generator</title>
+    <style>
+        body { font-family: system-ui, sans-serif; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; background: #f0f2f5; gap: 20px; }
+        .card { background: white; padding: 40px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); text-align: center; max-width: 600px; }
+        h1 { margin-top: 0; color: #111827; }
+        p { color: #6b7280; line-height: 1.6; }
+        button { background: #4F46E5; color: white; border: none; padding: 12px 24px; border-radius: 8px; font-weight: bold; cursor: pointer; font-size: 16px; margin-top: 20px; }
+        button:hover { background: #4338CA; }
+        .steps { text-align: left; background: #f9fafb; padding: 20px; border-radius: 12px; margin-top: 20px; border: 1px solid #e5e7eb; }
+        code { background: #e5e7eb; padding: 2px 6px; border-radius: 4px; font-family: monospace; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>Icon Generator</h1>
+        <p>Your app needs an image file, not just code. This tool renders your SVG code into a PNG image.</p>
+        
+        <!-- The Canvas where we draw the logo -->
+        <canvas id="canvas" width="512" height="512" style="width: 128px; height: 128px; border: 1px solid #ddd; border-radius: 20px;"></canvas>
+        
+        <div class="steps">
+            <h3>Instructions:</h3>
+            <ol>
+                <li>Click the <strong>Download icon.png</strong> button below.</li>
+                <li>Save the file into your project's <code>public</code> folder.</li>
+                <li><strong>Important:</strong> You also need an <code>.ico</code> file for Windows.</li>
+                <li>Go to <a href="https://convertico.com" target="_blank">ConvertICO.com</a>.</li>
+                <li>Upload the <code>icon.png</code> you just downloaded.</li>
+                <li>Download the result as <code>icon.ico</code> and save it to your <code>public</code> folder.</li>
+            </ol>
+        </div>
+
+        <button onclick="downloadPng()">Download icon.png</button>
+    </div>
+
+    <script>
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+
+        // Your exact SVG code
+        const svgString = `<svg width="512" height="512" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="512" height="512" fill="transparent"/>
+            <circle cx="20" cy="20" r="20" fill="#4F46E5"/>
+            <path d="M10 25 L30 25 L30 15 L20 19 L10 15 Z" fill="white"/>
+        </svg>`;
+
+        const img = new Image();
+        const svg = new Blob([svgString], {type: 'image/svg+xml;charset=utf-8'});
+        const url = URL.createObjectURL(svg);
+
+        img.onload = function() {
+            ctx.drawImage(img, 0, 0, 512, 512); // Draw SVG onto 512x512 canvas
+            URL.revokeObjectURL(url);
+        };
+        img.src = url;
+
+        function downloadPng() {
+            const link = document.createElement('a');
+            link.download = 'icon.png';
+            link.href = canvas.toDataURL('image/png');
+            link.click();
+        }
+    </script>
+</body>
+</html>

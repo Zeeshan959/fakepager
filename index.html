@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#4F46E5" />
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-72QVSS499Z"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-72QVSS499Z');
+    </script>
+
+    <!-- Schema.org Organization Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Pagerlo",
+      "url": "https://www.pagerlo.com",
+      "logo": "https://www.pagerlo.com/icon.png",
+      "sameAs": [
+        "https://x.com/pagerlo"
+      ]
+    }
+    </script>
+
+    <!-- Primary Meta Tags -->
+    <title>Pagerlo | Professional PDF Reader & Deep Focus Library</title>
+    <meta name="title" content="Pagerlo | Professional PDF Reader & Deep Focus Library">
+    <meta name="description" content="Your minimalist reading experience. Upload your PDF library to a distraction-free workspace. Secure, local storage meets beautiful design for deep focus.">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.pagerlo.com/">
+    <meta property="og:title" content="Pagerlo | Professional PDF Reader & Deep Focus Library">
+    <meta property="og:description" content="Your minimalist reading experience. Upload your PDF library to a distraction-free workspace. Secure, local storage meets beautiful design for deep focus.">
+    <meta property="og:image" content="https://www.pagerlo.com/og-image.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.pagerlo.com/">
+    <meta property="twitter:title" content="Pagerlo | Professional PDF Reader & Deep Focus Library">
+    <meta property="twitter:description" content="Your minimalist reading experience. Upload your PDF library to a distraction-free workspace. Secure, local storage meets beautiful design for deep focus.">
+    <meta property="twitter:image" content="https://www.pagerlo.com/og-image.png">
+    
+    <!-- Favicon and PWA Manifest -->
+    <link rel="icon" type="image/x-icon" href="/pagerlo.ico">
+    <link rel="icon" type="image/png" href="/icon.png">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="apple-touch-icon" href="/icon.png">
+    <link rel="manifest" href="/manifest.json">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf_viewer.css" />
+    
+    <!-- Premium Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bitcount+Single:wght@100..900&family=Bitcount:wght@100..900&family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+
+    <style>
+      :root {
+        --font-primary: 'Google Sans', 'Inter', system-ui, sans-serif;
+        --font-display: 'Google Sans', sans-serif;
+        --font-mono: 'Bitcount Single', 'Courier New', monospace;
+      }
+
+      body {
+        font-family: var(--font-primary);
+        font-optical-sizing: auto;
+        font-variation-settings: "GRAD" 0;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-rendering: optimizeLegibility;
+      }
+
+      .font-display { 
+        font-family: var(--font-display);
+        letter-spacing: -0.02em;
+        font-optical-sizing: auto;
+        font-variation-settings: "GRAD" 0;
+      }
+
+      .font-google { 
+        font-family: var(--font-primary);
+        font-optical-sizing: auto;
+        font-variation-settings: "GRAD" 0;
+      }
+
+      .font-bitcount { 
+        font-family: var(--font-mono); 
+      }
+      
+      h1, h2, h3, h4, h5, h6 {
+        font-family: var(--font-display);
+        letter-spacing: -0.04em;
+        line-height: 1.1;
+      }
+
+      @keyframes fade-in-up {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+
+      @keyframes card-fade-in {
+        from { opacity: 0; transform: translateY(10px) scale(0.98); }
+        to { opacity: 1; transform: translateY(0) scale(1); }
+      }
+
+      /* Custom selection style */
+      ::selection {
+        background-color: rgba(79, 70, 229, 0.1);
+        color: #4F46E5;
+      }
+    </style>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Google Sans', 'Inter', 'sans-serif'],
+              display: ['Google Sans', 'sans-serif'],
+              google: ['Google Sans', 'sans-serif'],
+              bitcount: ['Bitcount Single', 'monospace'],
+            },
+            colors: {
+              'theme-white-bg': '#FFFFFF',
+              'theme-white-text': '#111827',
+              'theme-dim-bg': '#1F2937',
+              'theme-dim-text': '#F3F4F6',
+              'theme-black-bg': '#000000',
+              'theme-black-text': '#9CA3AF',
+              'brand-bg': '#FFFFFF',
+              'brand-text': '#111827',
+              'brand-primary': '#4F46E5',
+              'brand-primary-hover': '#4338CA',
+            },
+            letterSpacing: {
+              'tighter-extreme': '-0.05em',
+              'widest-extreme': '0.5em',
+            }
+          }
+        }
+      }
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/pdf-lib/dist/pdf-lib.min.js"></script>
+    <script>
+      pdfjsLib.GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js`;
+    </script>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.2",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "vite": "https://esm.sh/vite@^7.3.1",
+    "@supabase/supabase-js": "https://esm.sh/@supabase/supabase-js@^2.90.1",
+    "path": "https://esm.sh/path@^0.12.7",
+    "url": "https://esm.sh/url@^0.11.4",
+    "electron": "https://esm.sh/electron@^39.2.7",
+    "fs": "https://esm.sh/fs@^0.0.1-security"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
